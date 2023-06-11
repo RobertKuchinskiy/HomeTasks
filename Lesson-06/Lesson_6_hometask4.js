@@ -4,14 +4,14 @@
 // б. числа разбивки дробные с 2 знаками после запятой (4.55, 5.20, 5.25)
 
 function splitNumber(number, parts) {
-    var result = [];
-    var sum = 0;
+    let result = [];
+    let sum = 0;
   
-    for (var i = 1; i <= parts; i++) {
+    for (let i = 1; i <= parts; i++) {
       if (i === parts) {
         result.push((number - sum).toFixed(2));
       } else {
-        var random = Math.random() * (number - sum - (parts - i));
+        let random = Math.random() * (number - sum - (parts - i));
         result.push(random.toFixed(2));
         sum += random;
       }
@@ -20,8 +20,8 @@ function splitNumber(number, parts) {
     return result;
   }
   
-  var originalNumber = 15;
-  var numberOfParts = 3;
+  let originalNumber = 15;
+  let numberOfParts = 3;
   
-  var numbers = splitNumber(originalNumber, numberOfParts);
+  let numbers = splitNumber(originalNumber, numberOfParts);
   console.log(numbers)

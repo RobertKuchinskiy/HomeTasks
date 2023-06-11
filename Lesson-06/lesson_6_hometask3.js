@@ -4,14 +4,14 @@
 // а. числа изначальное число целое, числа разбивки - целые (4,6,5)
 
 function splitNumber(number, parts) {
-    var result = [];
-    var sum = 0;
+    let result = [];
+    let sum = 0;
   
-    for (var i = 1; i <= parts; i++) {
+    for (let i = 1; i <= parts; i++) {
       if (i === parts) {
         result.push(number - sum);
       } else {
-        var random = Math.floor(Math.random() * (number - sum - (parts - i)));
+        let random = Math.floor(Math.random() * (number - sum - (parts - i)));
         result.push(random);
         sum += random;
       }
@@ -20,8 +20,8 @@ function splitNumber(number, parts) {
     return result;
   }
   
-  var originalNumber = 15;
-  var numberOfParts = 3;
+  let originalNumber = 15;
+  let numberOfParts = 3;
   
-  var numbers = splitNumber(originalNumber, numberOfParts);
+  let numbers = splitNumber(originalNumber, numberOfParts);
   console.log(numbers)
