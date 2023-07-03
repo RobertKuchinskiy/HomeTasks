@@ -21,27 +21,27 @@ getCalories () {
 
 class Salad {
     constructor() {
-        this.vegetablesegetables = [];
+        this.vegetables = [];
     }
 
-    addVegetables (vegetables) {
-        this.Vegetables.push(vegetables);
+    addVegetables (vegetable) {
+        this.vegetables.push(vegetable);
     }
 
-    removeVegetables (vegetables) {
-       let index = this.vegetables.indexOf(vegetables);
+    removeVegetables (vegetable) {
+       let index = this.vegetables.indexOf(vegetable);
        if (index !== -1) {
         this.vegetables.splice(index, 1);
        }
     }
 
-getTotalCalories () {
+getTotalCalories() {
     let totalCalories = 0;
-    for (const vegetables of this.vegetables)  {
-        totalCalories += vegetable.getCalories();
-      }
-      return totalCalories;
-}
+    for (const vegetable of this.vegetables) {
+      totalCalories += vegetable.getCalories();
+    }
+    return totalCalories;
+  }
 
 sortVegetablesByCalories() {
     this.vegetables.sort((a, b) => a.getCalories() - b.getCalories());
@@ -69,7 +69,7 @@ salad.addVegetables(tomato);
 salad.addVegetables(potato);
 salad.addVegetables(corn);
 
-const calories = salad.getTotalCalories();
+const totalCalories = salad.getTotalCalories();
 console.log("Общая калорийность салата:", totalCalories);
 
 salad.sortVegetablesByCalories();
