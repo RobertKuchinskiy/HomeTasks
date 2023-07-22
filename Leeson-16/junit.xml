@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="2.143">
+  <testsuite name="API tests" errors="0" failures="0" skipped="0" timestamp="2023-07-22T05:45:58" time="1.275" tests="2">
+    <testcase classname="API tests PUT request should be 200" name="API tests PUT request should be 200" time="0.011">
+    </testcase>
+    <testcase classname="API tests PUT should be valid schema" name="API tests PUT should be valid schema" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="API tests" errors="0" failures="0" skipped="0" timestamp="2023-07-22T05:45:58" time="1.354" tests="2">
+    <testcase classname="API tests GET request should be 200" name="API tests GET request should be 200" time="0.005">
+    </testcase>
+    <testcase classname="API tests GET should be valid json schema" name="API tests GET should be valid json schema" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="API tests" errors="0" failures="0" skipped="0" timestamp="2023-07-22T05:45:59" time="0.306" tests="2">
+    <testcase classname="API tests GET activities by id request should be 200" name="API tests GET activities by id request should be 200" time="0.004">
+    </testcase>
+    <testcase classname="API tests GET activities by id should be valid json schema" name="API tests GET activities by id should be valid json schema" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="API tests" errors="0" failures="0" skipped="0" timestamp="2023-07-22T05:46:00" time="0.274" tests="1">
+    <testcase classname="API tests DELETE activities by id request should be 200" name="API tests DELETE activities by id request should be 200" time="0.098">
+    </testcase>
+  </testsuite>
+  <testsuite name="API tests" errors="0" failures="0" skipped="0" timestamp="2023-07-22T05:46:00" time="0.291" tests="2">
+    <testcase classname="API tests POST request should be 200" name="API tests POST request should be 200" time="0.004">
+    </testcase>
+    <testcase classname="API tests POST should be valid schema" name="API tests POST should be valid schema" time="0.003">
+    </testcase>
+  </testsuite>
+</testsuites>
