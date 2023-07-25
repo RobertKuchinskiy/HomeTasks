@@ -41,12 +41,11 @@ describe('Chrome Driver Tests', function () {
     it('Test 2: Verify First Link on Google Search', async function () {
       try {
         await driver.get('https://www.google.com/');
-        await driver.findElement(By.name('q')).sendKeys('driver', Key.RETURN);
+        await driver.findElement(By.name('driver')).sendKeys('driver', Key.RETURN);
         await driver.sleep(2000);
         const firstLinkElement = await driver.findElement(By.css('h3.LC20lb.DKV0Md'));
         const firstLinkText = await firstLinkElement.getText();
         assert.ok(firstLinkText.toLowerCase().includes('driver'));
-        console.log('First Link Text:', firstLinkText);
       } catch (error) {
         console.error('Error occurred:', error.message);
       }
