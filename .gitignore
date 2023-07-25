@@ -1,6 +1,8 @@
-
-Lesson-04/fs.js
-Lesson-04/package.json
+node_modules
 main.js
-type_variables.js
-.npmrc
+type_variables
+Lesson-04
+Lesson-06
+Lesson-07
+Leeson-16
+mochawesome-report
