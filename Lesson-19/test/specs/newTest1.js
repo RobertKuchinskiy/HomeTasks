@@ -19,38 +19,34 @@ describe('Тестирование https://webdriver.io/', function () {
   it('Test 1: Check Page Title', async () => {
     await browser.url('https://webdriver.io/');
     const title = await browser.getTitle();
-    assert.include(title, 'WebdriverIO');
+    expect(title).to.include('WebdriverIO');
   });
 
-  
   it('Test 2: Check svg on main page: "svg_j3ED"', async () => {
     await browser.url('https://webdriver.io/');
 
     const imageElement = await browser.$('.svg_j3ED');
-    assert(await imageElement.isDisplayed(), 'Картинка с классом "svg_j3ED" отображается на странице');
+    expect(await imageElement.isDisplayed(), 'Картинка с классом "svg_j3ED" отображается на странице').to.be.true;
   });
 
-  it('Test 3: Verify Page Title', function () {
-    browser.url('https://webdriver.io/');
-    const pageTitle = browser.getTitle();
-    expect(pageTitle).to.equal('WebdriverIO · Next-gen WebDriver test framework for Node.js');
+  it('Test 3: Verify Active Navbar Link', async () => {
+    await browser.url('https://webdriver.io/');
+    const activeNavbarLink = await browser.$('.navbar__item.navbar__link.navbar__link--active');
+    expect(await activeNavbarLink.isDisplayed(), 'Активная ссылка навигации отображается на странице').to.be.true;
   });
 
-  it('Test 4: Verify Documentation Link', function () {
-    browser.url('https://webdriver.io/');
-    const documentationLink = $('a=Documentation');
-    expect(documentationLink.isDisplayed()).to.be.true;
-  });
-
-  it('Test 5: Verify Search Functionality', function () {
-    browser.url('https://webdriver.io/');
-    const searchInput = $('[name="search_query"]');
-    searchInput.setValue('selenium');
+  it('Test 4: Verify Search Functionality', async () => {
+    await browser.url('https://webdriver.io/');
+    const searchInput = await $('[name="search_query"]');
+    expect(await searchInput.waitForDisplayed(), 'Поле поиска отображается на странице').to.be.true;
+    await searchInput.setValue('selenium');
     browser.keys('Enter');
-    const searchResults = $$('.search-results-content .docSearch-item');
+    const searchResults = await $$('.search-results-content .docSearch-item');
     expect(searchResults.length).to.be.above(0);
   });
 });
+
+
 
 
 
