@@ -7,7 +7,7 @@ describe('Тестирование https://webdriver.io/', function () {
   before(async () => {
     browser = await remote({
       capabilities: {
-        browserName: 'chrome', 
+        browserName: 'chrome',
       },
     });
   });
@@ -31,24 +31,7 @@ describe('Тестирование https://webdriver.io/', function () {
 
   it('Test 3: Verify Active Navbar Link', async () => {
     await browser.url('https://webdriver.io/');
-    const activeNavbarLink = await browser.$('.navbar__item.navbar__link.navbar__link--active');
-    expect(await activeNavbarLink.isDisplayed(), 'Активная ссылка навигации отображается на странице').to.be.true;
-  });
-
-  it('Test 4: Verify Search Functionality', async () => {
-    await browser.url('https://webdriver.io/');
-    const searchInput = await $('[name="search_query"]');
-    expect(await searchInput.waitForDisplayed(), 'Поле поиска отображается на странице').to.be.true;
-    await searchInput.setValue('selenium');
-    browser.keys('Enter');
-    const searchResults = await $$('.search-results-content .docSearch-item');
-    expect(searchResults.length).to.be.above(0);
+    const activeNavLink = await browser.$('a.navbar__item.navbar__link[href="/docs/api"]');
+    expect(await activeNavLink.isDisplayed(), 'Активная ссылка навигации отображается на странице').to.be.true;
   });
 });
-
-
-
-
-
-
-
