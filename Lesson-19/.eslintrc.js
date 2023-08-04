@@ -9,5 +9,8 @@ module.exports = {
     parserOptions: {
       ecmaVersion: 12,
     },
-    rules: {},
+    rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+        "no-extra-semi": "off"
+    },
   };
