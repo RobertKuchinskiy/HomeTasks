@@ -5,7 +5,12 @@ const { expect } = require('chai');
    it('should navigate on Versions | WebdriverIO', async () => {
      VersionPage.open();
 
-     const expectedTitle =  'Versions | WebdriverIO';
+     const expectedTitle = 'Versions | WebdriverIO';
+     await browser.waitUntil(async () => {
+       const currentTitle = await VersionPage.getTitle();
+       return currentTitle === expectedTitle;
+     }, { timeout: 10000, timeoutMsg: 'Expected title to be ' + expectedTitle });
+
      const currentTitle = await VersionPage.getTitle();
      expect(currentTitle).to.equal(expectedTitle);
    });
